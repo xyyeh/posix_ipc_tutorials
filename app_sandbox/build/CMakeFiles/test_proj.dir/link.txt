@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_proj.dir/main.cc.o CMakeFiles/test_proj.dir/shm_sem.cc.o  -o test_proj -lrt -pthread 
