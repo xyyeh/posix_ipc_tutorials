@@ -1,3 +1,0 @@
-/home/xyyeh/Desktop/Workspaces/xy_ws/cpp_tutorials/app_sandbox/build/CMakeFiles/rebuild_cache.dir
-/home/xyyeh/Desktop/Workspaces/xy_ws/cpp_tutorials/app_sandbox/build/CMakeFiles/test_proj.dir
-/home/xyyeh/Desktop/Workspaces/xy_ws/cpp_tutorials/app_sandbox/build/CMakeFiles/edit_cache.dir

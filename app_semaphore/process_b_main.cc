@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#include <algorithm>
 #include <array>
 #include <chrono>
 #include <iostream>
@@ -140,27 +141,20 @@ int main() {
     idx = (idx + 1) % loop_time.size();
     duration_last = duration;
 
-    // if (idx == 0) {
-    //   std::cout << "Mean loop time = "
-    //             << std::accumulate(loop_time.begin(), loop_time.end(), 0) /
-    //                    ((double)loop_time.size())
-    //             << std::endl;
-    // }
+    if (idx == 0) {
+      std::cout << "Loop time = "
+                << *std::max_element(loop_time.begin(), loop_time.end()) << ", "
+                << *std::min_element(loop_time.begin(), loop_time.end())
+                << std::endl;
+    }
 
     // process data from server, run computations and update shared memory
     usleep(200);
 
-    // post to server only the value is zero
-    // int sem_val;
-    // if (sem_getvalue(client_mutex_sem, &sem_val) == EINVAL) {
-    //   return -1;
-    // } else {
-    //   if (sem_val == 0) {
+    // post to server
     if (sem_post(client_mutex_sem) != 0) {
       error("sem_post");
     }
-    //   }
-    // }
 
     // kill program on control c
     if (kill_program) {
