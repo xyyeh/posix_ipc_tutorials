@@ -1,0 +1,2 @@
+## Interprocess mutex
+This example contains a shared mutex implementation by [yamnikov-oleg](https://gist.github.com/yamnikov-oleg/abf61cf96b4867cbf72d). To run the program, execute process_a first. It will stop after locking the shared mutex. Now run another identical process (process_b). This time round, we will notice that process_b is stucked at locking since process_a is holding on to it. Simply release the lock by pressing any key in process_a. 
