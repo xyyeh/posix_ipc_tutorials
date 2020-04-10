@@ -8,7 +8,6 @@ The repository contains a typical cpp examples, tools and methods that are usefu
 
 ## Build instructions
 The repository contains several apps which are prepended with 'app_'. The purpose of each app is detailed in the README.md files in the respective folders. Each of the app can be built by:
-    
     mkdir build
     cd build
     cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_THIRDPARTY=ON
