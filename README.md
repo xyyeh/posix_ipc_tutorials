@@ -7,4 +7,7 @@
 The repository contains a typical cpp examples, tools and methods that are useful for general real-time programming.
 
 ## Build instructions
-The repository contains several apps which are prepended with 'app_'. The purpose of each app is detailed in the README.md files in the respective folders.
+The repository contains several apps which are prepended with 'app_'. The purpose of each app is detailed in the README.md files in the respective folders. Each of the app can be built by:
+    mkdir build
+    cd build
+    cmake .. 
