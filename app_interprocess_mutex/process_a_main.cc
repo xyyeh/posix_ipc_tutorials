@@ -10,12 +10,12 @@ int main() {
   // any other process to access the mutex.
   // This function both creates new and opens an existing mutex.
   shared_mutex_t mutex = shared_mutex_init("/my-mutex");
-  if (mutex.ptr == NULL) {
+  if (mutex.ptr == nullptr) {
     return 1;
   }
 
   if (mutex.created) {
-    printf("The mutex was just created\n");
+    std::cout << "The mutex was just created" << std::endl;
     // initialize
     for (int i = 0; i < 10; i++) {
       mutex.buffer[i] = 0;

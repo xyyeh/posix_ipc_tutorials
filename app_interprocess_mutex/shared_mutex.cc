@@ -13,7 +13,7 @@
 #include <string>
 
 shared_mutex_t shared_mutex_init(const std::string &str) {
-  shared_mutex_t mutex = {NULL, 0, "", 0};
+  shared_mutex_t mutex;
   errno = 0;
 
   // Open existing shared memory object, or create one.
@@ -57,6 +57,12 @@ shared_mutex_t shared_mutex_init(const std::string &str) {
       perror("pthread_mutexattr_setpshared");
       return mutex;
     }
+
+    if (pthread_mutexattr_setrobust(&attr, PTHREAD_MUTEX_ROBUST)) {
+      perror("pthread_mutexattr_setrobust");
+      return mutex;
+    }
+
     if (pthread_mutex_init(mutex_ptr, &attr)) {
       perror("pthread_mutex_init");
       return mutex;

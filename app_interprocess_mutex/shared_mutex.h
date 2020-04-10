@@ -3,22 +3,28 @@
 
 #include <pthread.h>
 
+#include <atomic>
+#include <memory>
 #include <string>
 
 // Structure of a shared mutex.
 typedef struct shared_mutex_t {
-  pthread_mutex_t *ptr;  // Pointer to the pthread mutex and
-                         // shared memory segment.
-  int shm_fd;            // Descriptor of shared memory object.
-  char name[20];         // Name of the mutex and associated
-                         // shared memory object.
+  pthread_mutex_t *ptr{nullptr};  // Pointer to the pthread mutex and
+                                  // shared memory segment.
+  int shm_fd{0};                  // Descriptor of shared memory object.
+  char name[20]{""};              // Name of the mutex and associated
+                                  // shared memory object.
+  int created{0};                 // Equals 1 (true) if initialization
+                                  // of this structure caused creation
+                                  // of a new shared mutex.
+                                  // Equals 0 (false) if this mutex was
+                                  // just retrieved from shared memory.
+
+  bool has_data{false};
   int buffer[10];
 
-  int created;  // Equals 1 (true) if initialization
-                // of this structure caused creation
-                // of a new shared mutex.
-                // Equals 0 (false) if this mutex was
-                // just retrieved from shared memory.
+  // std::atomic_bool has_data;
+
 } shared_mutex_t;
 
 // Initialize a new shared mutex with given `name`. If a mutex
@@ -26,7 +32,7 @@ typedef struct shared_mutex_t {
 // Otherwise a new mutes will by created.
 //
 // In case of any error, it will be printed into the standard output
-// and the returned structure will have `ptr` equal `NULL`.
+// and the returned structure will have `ptr` equal `nullptr`.
 // `errno` wil not be reset in such case, so you may used it.
 //
 // **NOTE:** In case when the mutex appears to be uncreated,
