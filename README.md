@@ -1,37 +1,10 @@
-## Welcome to GitHub Pages
+[![Pull requests](https://img.shields.io/github/issues-pr-raw/xyyeh/physics_interface.svg)](https://github.com/xyyeh/physics_interface/pulls)
+[![Opened issues](https://img.shields.io/github/issues-raw/xyyeh/physics_interface.svg)](https://github.com/xyyeh/physics_interface/issues)
+[![Documentation](https://img.shields.io/badge/Documentation-latest-blue.svg)](https://github.com/xyyeh/physics_interface/)
+[![License](https://img.shields.io/github/license/xyyeh/physics_interface)](https://github.com/xyyeh/physics_interface/LICENSE.md)
 
-You can use the [editor on GitHub](https://github.com/xyyeh/cpp_tutorials/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# Cpp Tutorial
+The repository contains a typical cpp examples, tools and methods that are useful for general real-time programming.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/xyyeh/cpp_tutorials/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Build instructions
+The repository contains several apps which are prepended with 'app_'. The purpose of each app is detailed in the README.md files in the respective folders.
