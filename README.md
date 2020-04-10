@@ -11,4 +11,4 @@ The repository contains several apps which are prepended with 'app_'. The purpos
 
     mkdir build
     cd build
-    cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_THIRDPARTY=ON
+    cmake ..
